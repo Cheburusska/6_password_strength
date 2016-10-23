@@ -6,7 +6,7 @@ blacklist = ['123456','12345','123456789','password','iloveyou','princess','1234
               '000000','7777777','Password1']
 
 
-def get_password_strength(password):
+def get_password_strength(password): #checks the strength
     p = password
     count = 0
     if p in blacklist or len(p) == 1:
@@ -36,7 +36,7 @@ def get_password_strength(password):
 
 def main():
     password = input("Enter your password:\n")
-    if len(password)>0 and len(re.findall('\s',password)) == 0:
+    if len(password)>0 and len(re.findall('\s',password)) == 0: #checks if password consist only of printable symbols
         print('Your score:', get_password_strength(password))
     else:
         print('Password length must be > 0 and it should consists only of printable symbols')
